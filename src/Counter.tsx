@@ -1,5 +1,5 @@
 import React from 'react';
-import ui from '.';
+import useInlineStyle from './directives/useInlineStyle';
 
 const defaultMinCount = 0;
 
@@ -15,7 +15,7 @@ export default (props: UiCounter) => {
     return null;
   }
   
-  const classes = ui.useInlineStyle({
+  const classes = useInlineStyle({
     root: {
       position: 'absolute',
       zIndex: 999999,
