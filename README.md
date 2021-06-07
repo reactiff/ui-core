@@ -5,15 +5,6 @@ UI toolkit foundation
 [![NPM](https://img.shields.io/npm/v/@reactiff/ui-core.svg)](https://www.npmjs.com/package/@reactiff/ui-core) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 
-# 4. Publish package first time
-```bash
-npm publish --access public
-```
-
-> DELETE THE ABOVE INSTRUCTIONS AFTER YOU'RE DONE
-
-## Install
-
 ```bash
 yarn add @reactiff/ui-core
 ```
