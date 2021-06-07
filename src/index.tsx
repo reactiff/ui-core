@@ -18,7 +18,7 @@ import tabs from './Tabs';
 
 import useInlineStyle from './directives/useInlineStyle';
 import util from './util';
-import uuid from 'uuid';
+import { v4 as uuid } from 'uuid';
 
 export default {
   
