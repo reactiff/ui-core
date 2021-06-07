@@ -12,11 +12,12 @@ import { Div, Row, Col } from './Layout';
 
 import masonry from './Masonry';
 import modal from './Modal';
+
 import propertyPage from './PropertyPage';
 import tabs from './Tabs';
 
 import useInlineStyle from './directives/useInlineStyle';
-
+import util from './util';
 import uuid from 'uuid';
 
 export default {
@@ -34,6 +35,7 @@ export default {
   
   masonry,
   modal,
+
   propertyPage,
   
   row: Row,
@@ -41,4 +43,8 @@ export default {
   tabs,
 
   useInlineStyle,
+  uuid,
+
+  ...util,
+  
 }

@@ -37,7 +37,7 @@ export default class MapReduceObject {
   constructor(object: any) {
     this.object = object;
   }
-
+  
   count() {
     return Object.keys(this.object).length;
   }

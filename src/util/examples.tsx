@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRouteMatch } from 'react-router';
+
 import inline from './logic';
 
 const ComponentOne = () => <h1>Case One</h1>;
