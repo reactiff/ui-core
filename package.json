@@ -27,7 +27,8 @@
   "peerDependencies": {
     "@material-ui/core": "^4.11.4",
     "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react-dom": "^16.8.0",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@material-ui/core": "^4.11.4",
