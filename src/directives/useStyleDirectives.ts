@@ -10,7 +10,7 @@ import styleAttributes, { StyleAttributes } from './styleAttributes';
 
 function useStyleDirectives<T>(
   directives: any,
-  componentOwnProps: any,
+  ownProps: any,
   tagName?: string,
   ...baseClasses: string[]
 ) {
@@ -33,6 +33,7 @@ function useStyleDirectives<T>(
     ref,
     data,
     innerProps,
+    ownProps,
   };
   const removeProps: string[] = [];
   const keys = Object.keys(nonReact);

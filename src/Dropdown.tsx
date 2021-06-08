@@ -5,7 +5,7 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { v4 as uuidv4 } from 'uuid';
 
-import { Div } from './Layout';
+import { div as Div } from './Layout';
 
 type DropdownOption = string
   | {

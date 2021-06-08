@@ -1,15 +1,13 @@
 import React, { ReactNode } from 'react';
+
+
 import { PropsDirectives, useStyleDirectives } from './directives';
 
 type DivProps = { children?: ReactNode, id?: string };
-export const Div = (directives: DivProps & PropsDirectives) => {
-  const { children, ...other } = directives;
-  const { 
-    root, 
-    props, 
-    attr, 
-    data 
-  } = useStyleDirectives<DivProps>(other, null);
+
+export const div = (directives: DivProps & PropsDirectives) => {
+  const { children, ...other }      = directives;
+  const { root, props, attr, data } = useStyleDirectives<DivProps>(other, null);
   return (
     <div className={root.className} id={directives.id} {...data}>
       {children}
@@ -18,7 +16,7 @@ export const Div = (directives: DivProps & PropsDirectives) => {
 };
 
 type RowProps = { children?: ReactNode, id?: string };
-export const Row = (directives: RowProps & PropsDirectives) => {
+export const row = (directives: RowProps & PropsDirectives) => {
   const { children, ...other } = directives;
   const { root } = useStyleDirectives<RowProps>(
     other,
@@ -34,7 +32,7 @@ export const Row = (directives: RowProps & PropsDirectives) => {
 };
 
 type ColProps = { children?: ReactNode, id?: string };
-export const Col = (directives: ColProps & PropsDirectives) => {
+export const col = (directives: ColProps & PropsDirectives) => {
   const { children, ...other } = directives;
   const { root } = useStyleDirectives<ColProps>(
     other,
@@ -49,8 +47,3 @@ export const Col = (directives: ColProps & PropsDirectives) => {
   );
 };
 
-export default {
-  Div,
-  Row,
-  Col,
-};

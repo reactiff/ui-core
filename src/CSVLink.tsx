@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import { CSVLink as ReactCSVLink } from 'react-csv';
-import { Div } from './Layout';
+import { div as Div } from './Layout';
 import { useInlineStyle } from './directives';
 
 export type UiCSVLink = {

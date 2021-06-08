@@ -8,7 +8,7 @@ import { TransitionProps } from '@material-ui/core/transitions';
 import Button from '@material-ui/core/Button';
 
 // components
-import { Div } from './Layout';
+import { div as Div } from './Layout';
 
 const Transition = React.forwardRef(function Transition(
     props: TransitionProps & { children?: React.ReactElement<any, any> },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Div, Row } from './Layout';
+import { div as Div, row as Row } from './Layout';
 import isNullOrUndefined from './util/object/traverse/isNullOrUndefined';
 import str from './util/string';
 

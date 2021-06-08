@@ -7,7 +7,7 @@ import {
   useStyleDirectives,
   useInlineStyle,
 } from './directives';
-import { Row, Col } from './Layout';
+import * as ui from './Layout';
 import util from './util';
 
 export type UiTabDef = {
@@ -34,6 +34,8 @@ export type UiTabs = {
 type ValueType = string | number | boolean | symbol;
 type ValueOrElement = ValueType | Element | React.ReactNode;
 export type FunctionOrValueOrElement = Function | ValueOrElement;
+
+
 
 interface TabPanelProps {
   children?: FunctionOrValueOrElement;
@@ -135,10 +137,10 @@ export default (directives: UiTabs & PropsDirectives) => {
   });
 
   const verticalLayout = (
-    <Row wide>
-      {keys.length > 1 && <Col>{tabStrip}</Col>}
-      <Col grow>{tabContent}</Col>
-    </Row>
+    <ui.row wide>
+      {keys.length > 1 && <ui.col>{tabStrip}</ui.col>}
+      <ui.col grow>{tabContent}</ui.col>
+    </ui.row>
   );
 
   const horizontalLayout = (

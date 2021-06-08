@@ -1,4 +1,4 @@
-import traverseLeaf from './traverseLeaf';
+import { traverseLeaf } from './traversers';
 import { Traverse, TraverseOptions, SelectorFunction } from './types';
 
 const traverse: Traverse = (
