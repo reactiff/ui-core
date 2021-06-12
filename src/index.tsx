@@ -25,7 +25,7 @@ import useInlineStyle from './directives/useInlineStyle';
 
 export { default as useInlineStyle } from './directives/useInlineStyle';
 export type { PropsDirectives } from './directives';
-export type { useStyleDirectives } from './directives';
+export { useStyleDirectives } from './directives';
 
 const index = {
 
