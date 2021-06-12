@@ -2,7 +2,6 @@ import * as React from 'react'
 import clsx from 'clsx'
 
 import card from './MediaCard';
-import csvLink from './CSVLink';
 import counter from './Counter';
 import table from './DataTable';
 import drawer from './Drawer';
@@ -35,7 +34,6 @@ const index = {
   clsx,
   
   counter,
-  csvLink,
   
   drawer,
   dropdown,
