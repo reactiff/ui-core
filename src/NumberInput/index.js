@@ -2,7 +2,7 @@ import React, {useRef} from 'react';
 import _ from 'lodash';
 
 // import '../css/numberinput.css';
-import { isNullOrUndefined, validation } from '../util/validation';
+import { isNullOrUndefined } from '../validation';
 import Throttle from '../Throttle';
 
 function isNumeric(n) {

@@ -3,7 +3,6 @@ import string from './string';
 import array from './array';
 import date from './date';
 import Object from './object';
-import * as Validation from './validation';
 
 export default {
   array,
@@ -11,5 +10,4 @@ export default {
   object: Object,
   string,
   date,
-  validation: Validation,
 };

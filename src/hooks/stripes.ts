@@ -38,7 +38,7 @@ function colorFromString(color: string) {
     throw new Error('Max number of color tokens expected is 2');
 }
 function parseColor(color: ColorNameOrPortion) {
-    if (typeof color == 'string') return colorFromString(color);
+    if (typeof color === 'string') return colorFromString(color);
     return color as ParsedColor;
 }
 

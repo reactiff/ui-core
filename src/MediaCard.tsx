@@ -66,6 +66,7 @@ export default function MediaCard(props: MediaCardProps) {
         <CardActions>
           {Object.keys(footerActions).map((key) => (
             <Button
+              key={key}
               size="small"
               color="primary"
               onClick={() => footerActions![key]()}

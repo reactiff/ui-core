@@ -1,7 +1,7 @@
-import { ExampleComponent } from '.'
+import ui from '..'
 
-describe('ExampleComponent', () => {
+describe('UI toolkit', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(ui).toBeTruthy()
   })
 })

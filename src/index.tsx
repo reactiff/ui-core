@@ -4,33 +4,28 @@ import clsx from 'clsx'
 import card from './MediaCard';
 import csvLink from './CSVLink';
 import counter from './Counter';
-
-import DataTable from './DataTable';
+import table from './DataTable';
 import drawer from './Drawer';
 import dropdown from './Dropdown';
-
 import * as divRowCol from './Layout';
-
 import * as hooks from './hooks';
-
 import loremIpsum from './loremIpsum';
-
 import masonry from './Masonry';
 import modal from './Modal';
-
-import NumberInput from './NumberInput';
-
+import numberInput from './NumberInput';
 import page from './Page';
 import propertyPage from './PropertyPage';
-
 import tabs from './Tabs';
 import text from './Text';
-
-import useInlineStyle from './directives/useInlineStyle';
 import util from './util';
+import * as validation from './validation';
 import { v4 as uuid } from 'uuid';
 import Throttle from './Throttle';
+import useInlineStyle from './directives/useInlineStyle';
 
+export { default as useInlineStyle } from './directives/useInlineStyle';
+export type { PropsDirectives } from './directives';
+export type { useStyleDirectives } from './directives';
 
 const index = {
 
@@ -52,12 +47,12 @@ const index = {
   masonry,
   modal,
 
-  numberInput: NumberInput,
+  numberInput,
 
   page,
   propertyPage,
   
-  table: DataTable,
+  table,
   tabs,
   text,
 
@@ -66,7 +61,8 @@ const index = {
   uuid,
 
   ...util,
-  
+  ...validation,
+
 }
 
 export default index;
