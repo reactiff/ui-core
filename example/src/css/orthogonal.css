@@ -22,11 +22,11 @@
   }
   
   .no-overflow {
-    overflow: hidden;
+    overflow: hidden!important;
   }
   
   .hidden {
-    display: none;
+    display: none!important;
   }
   
   .overlay {
@@ -159,15 +159,18 @@
   }
     
   @media only screen and (min-width: 768px) {
-    .mobile-only { display: none; }
+    .mobile-only { display: none!important; }
   }
   
-  .no-mobile { display: none; }
+  .no-mobile { display: none!important; }
   @media only screen and (min-width: 768px) {
-    .no-mobile { display: unset; }
+    .no-mobile { display: unset!important; }
   }
     
   .borderBox {
+    box-sizing: border-box;
+  }
+  .border-box {
     box-sizing: border-box;
   }
   
@@ -201,4 +204,4 @@
     -webkit-appearance: none;
   }
   
-  .no-wrap { white-space: nowrap; }
+  .no-wrap { white-space: nowrap!important; }

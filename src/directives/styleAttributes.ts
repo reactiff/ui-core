@@ -1,7 +1,11 @@
 import { ReactNode } from 'react';
 import { createStyle } from './functions';
+import * as CSS from 'csstype';
 
 export interface StyleAttributes {
+
+  //
+  css?: CSS.Properties;
 
   backgroundColor?: any;
   bgColor?: any;
@@ -65,7 +69,6 @@ export interface StyleAttributes {
   paddingRight?: any;
   paddingBottom?: any;
   paddingLeft?: any;
-
   pseudo?: any;
 
   textAlign?: any;

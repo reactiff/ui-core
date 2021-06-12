@@ -4,9 +4,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { StyleBag, createClass } from './functions';
 import classSwitches from './classSwitches';
 import styleAttributes, { StyleAttributes } from './styleAttributes';
-// import { getPropsDescriptor } from './getPropsDescriptor';
 
-// const $$reactElement = Symbol.for('react.element');
+
 
 function useStyleDirectives<T>(
   directives: any,
@@ -14,6 +13,7 @@ function useStyleDirectives<T>(
   tagName?: string,
   ...baseClasses: string[]
 ) {
+
   const {
     id,
     children,
@@ -23,9 +23,13 @@ function useStyleDirectives<T>(
     data,
     pseudo,
     innerProps,
-    ...nonReact
+    //
+    css,
+    ...other
   } = directives;
-  const specialProps = {
+
+
+  const ignoredProps = {
     id,
     children,
     style,
@@ -34,12 +38,23 @@ function useStyleDirectives<T>(
     data,
     innerProps,
     ownProps,
+    //
+    css,
   };
+
   const removeProps: string[] = [];
-  const keys = Object.keys(nonReact);
-  const bag: StyleBag = { style: style || {}, classes: [] };
+  const keys = Object.keys(other);
+
+  const bag: StyleBag = { 
+    style: { 
+      ...css, 
+      ...style 
+    }, 
+    classes: [] 
+  };
+  
   keys.forEach((key: any) => {
-    if (!Reflect.has(specialProps, key)) {
+    if (!Reflect.has(ignoredProps, key)) {
       const value = directives[key];
       if (Reflect.has(classSwitches, key)) {
         createClass({
@@ -60,7 +75,7 @@ function useStyleDirectives<T>(
     }
   });
 
-  const props = { ...nonReact };
+  const props = { ...other };
   removeProps.forEach((key) => {
     delete props[key];
   });
@@ -93,7 +108,7 @@ function useStyleDirectives<T>(
         usedStyles.pseudo,
       ),
     },
-    props: { ...(props as T), ...specialProps },
+    props: { ...(props as T), ...ignoredProps },
     attr,
     data: dataProps,
   };

@@ -7,10 +7,9 @@ export class TextProps {
     children?: any;    
 }
 
-const _ownProps = new TextProps();
 const Text = (directives: TextProps & PropsDirectives) => {
-    const { ...other }                = directives;
-    const { root, props, attr, data } = useStyleDirectives<TextProps>(other, _ownProps);
+    const { size, children, ...other }                = directives;
+    const { root, props, attr, data } = useStyleDirectives<TextProps>(other, null);
     if (!root.className) {
         return fnOrValue(directives.children);
     }
