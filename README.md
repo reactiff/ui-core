@@ -12,29 +12,28 @@ yarn add @reactiff/ui-core
 ## Usage
 
 ```tsx
-import Component from '@reactiff/ui-core'
+import ui from '@reactiff/ui-core'
 
-const instance = new Component();
+return <ui.div>HELLO</ui.div>;
 
-// do stuff with it
 ```
 
-## Publishing the package to npm
+## useGridSize()
+```tsx
 
-First time (with free account) if scoped, must set access to public
-```bash
-npm publish --access public
+const { code, value } = ui.useGridSize();
+
 ```
 
-To update
-```bash
-npm version major|minor|patch
-```
-
-and then simply
-```bash
-npm publish
-```
+| Code | Value | Screen Width      |
+| ---- | ----- | -------------     |
+| xs   | 1     | (less than small) |
+| sm   | 2     | > 576         |
+| md   | 3     | > 768         | 
+| lg   | 4     | > 992         |
+| xl   | 5     | > 1200        |
+| xxl  | 6     | > 1400        | 
+| xxxl | 7     | > 1600        | 
 
 ---
 

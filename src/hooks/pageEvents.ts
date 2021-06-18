@@ -36,9 +36,8 @@ const getGridSize = (system: 'material' | 'bootstrap') => {
     return 'xs'; 
 } 
 
-
 const makeGridSizeResult = (code: string) => ({ code, value: gridSizeValues[code] });
-export const useGridSize = (system: 'material' | 'bootstrap') => { 
+export const useGridSize = (system: 'material' | 'bootstrap') => {                          // useGridSize
     const ref = useRef({ value: 'xs', ticking: false }).current;
     const [state, setState] = useState(() => makeGridSizeResult(getGridSize(system))); 
     useEffect(
@@ -54,7 +53,7 @@ export const useGridSize = (system: 'material' | 'bootstrap') => {
 } 
 
 function getWindowHeight() { return window.innerHeight }
-export const useWindowHeight = () => { 
+export const useWindowHeight = () => {                                                      // useWindowHeight
     const ref = useRef({ value: 0, ticking: false }).current;
     const [state, setState] = useState(() => !isClient ? 0 : getWindowHeight()); 
     useEffect(
@@ -65,7 +64,7 @@ export const useWindowHeight = () => {
 
 
 function getWindowWidth() { return window.innerWidth }
-export const useWindowWidth = () => { 
+export const useWindowWidth = () => {                                                       // useWindowWidth
     const ref = useRef({ value: 0, ticking: false }).current;
     const [state, setState] = useState(() => !isClient ? 0 : getWindowWidth()); 
     useEffect(
