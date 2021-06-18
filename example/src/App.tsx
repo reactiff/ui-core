@@ -16,7 +16,7 @@ const App = () => {
     const run = () => {
       const newState = { value: 0 };
       setState(newState);
-      setTimeout(run, 1000);
+      // setTimeout(run, 1000);
     }
     run();
   }, [setState]);

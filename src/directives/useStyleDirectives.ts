@@ -23,8 +23,8 @@ function useStyleDirectives<T>(
     data,
     pseudo,
     innerProps,
-    //
     css,
+    onClick,
     ...other
   } = directives;
 
@@ -36,13 +36,14 @@ function useStyleDirectives<T>(
     className,
     ref,
     data,
+    pseudo,
     innerProps,
     ownProps,
-    //
     css,
+    onClick,
   };
 
-  const removeProps: string[] = [];
+  const utilizedKeys: string[] = [];
   const keys = Object.keys(other);
 
   const bag: StyleBag = { 
@@ -53,30 +54,32 @@ function useStyleDirectives<T>(
     classes: [] 
   };
   
+  // Process each directive (except ignored ones)
   keys.forEach((key: any) => {
     if (!Reflect.has(ignoredProps, key)) {
       const value = directives[key];
-      if (Reflect.has(classSwitches, key)) {
-        createClass({
-          bag, key, value, debug: false,
-        });
-        removeProps.push(key);
-      } else if (Reflect.has(styleAttributes, key)) {
+
+      if (Reflect.has(classSwitches, key)) {             
+        createClass({ bag, key, value, debug: false });       // If its a CLASS SWITCH
+        utilizedKeys.push(key);
+        return;
+      } 
+
+      if (Reflect.has(styleAttributes, key)) {                // If its an ATTRIBUTE
         (styleAttributes as any)[key]({ bag, key, value });
-        removeProps.push(key);
-      } else {
-        const type = typeof value;
-        if (type === 'boolean' && value === true) {
-          createClass({
-            bag, key, value, debug: false,
-          });
-        }
+        utilizedKeys.push(key);
+        return;
+      } 
+            
+      if (value === true) {
+        createClass({ bag, key, value, debug: false });
       }
+    
     }
   });
 
   const props = { ...other };
-  removeProps.forEach((key) => {
+  utilizedKeys.forEach((key) => {
     delete props[key];
   });
 

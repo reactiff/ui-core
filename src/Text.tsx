@@ -14,7 +14,7 @@ const Text = (directives: TextProps & PropsDirectives) => {
         return fnOrValue(directives.children);
     }
     return (
-        <div className={root.className}>
+        <div {...data} {...props} {...attr} className={root.className}>
             {fnOrValue(directives.children)}
         </div>
     )
