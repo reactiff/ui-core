@@ -146,10 +146,10 @@ export default (directives: UiTabs & PropsDirectives) => {
   );
 
   const horizontalLayout = (
-    <>
+    <React.Fragment>
       {keys.length > 1 && tabStrip}
       {tabContent}
-    </>
+    </React.Fragment>
   );
 
   const isVertical = directives.orientation === 'vertical';

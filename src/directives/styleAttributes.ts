@@ -3,10 +3,7 @@ import { createStyle } from './functions';
 import * as CSS from 'csstype';
 
 export interface StyleAttributes {
-
-  //
-  css?: CSS.Properties;
-
+  
   backgroundColor?: any;
   bgColor?: any;
 
@@ -32,6 +29,7 @@ export interface StyleAttributes {
   children?: ReactNode;
   className?: string;
   color?: string;
+  css?: CSS.Properties | any;
   cursor?: 'pointer' | string;
 
   data?: any;
@@ -61,6 +59,7 @@ export interface StyleAttributes {
   onFocus?: Function;
   onMouseUp?: Function;
   onMouseDown?: Function;
+  onMouseMove?: Function;
 
   opacity?: any;
 

@@ -5,10 +5,10 @@ type Props = { children?: any };
 export const Div = (directives: Props & PropsDirectives) => {
   
     const { children, ...other }      = directives;
-    const { root, props, attr, data } = useStyleDirectives<Props>(other, null);
+    const { root, data, events } = useStyleDirectives<Props>(other, null);
 
     return (
-        <div className={root.className} {...data}>
+        <div className={root.className} {...data} {...events}>
             {children}
         </div>
     );

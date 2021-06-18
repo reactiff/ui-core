@@ -61,7 +61,7 @@ inline.switch(
 )
 
   return (
-    <>
+    <React.Fragment>
 
       {/* Which makes it useful inline with JSX: */}
       <h1>
@@ -129,6 +129,6 @@ inline.switch(
       </div>
 
 
-    </>
+    </React.Fragment>
   );
 }; 

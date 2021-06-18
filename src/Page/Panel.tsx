@@ -13,7 +13,7 @@ const _ownProps = new PanelProps();
 
 export const Panel = (directives: PanelProps & PropsDirectives) => {
     const { ...other }                = directives;
-    const { root, props, attr, data } = useStyleDirectives<PanelProps>(other, _ownProps, undefined,'page-panel');
+    const { root, props, data } = useStyleDirectives<PanelProps>(other, _ownProps, undefined,'page-panel');
     return (
         <ui.col className={root.className} {...data} alignSelfStretch> 
             <ui.div 

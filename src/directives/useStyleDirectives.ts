@@ -5,8 +5,6 @@ import { StyleBag, createClass } from './functions';
 import classSwitches from './classSwitches';
 import styleAttributes, { StyleAttributes } from './styleAttributes';
 
-
-
 function useStyleDirectives<T>(
   directives: any,
   ownProps: any,
@@ -24,7 +22,15 @@ function useStyleDirectives<T>(
     pseudo,
     innerProps,
     css,
+    //events
+    onBlur,
     onClick,
+    onChange,
+    onFocus,
+    onMouseUp,
+    onMouseDown,
+    onMouseMove,
+    // ...
     ...other
   } = directives;
 
@@ -40,7 +46,13 @@ function useStyleDirectives<T>(
     innerProps,
     ownProps,
     css,
+    onBlur,
     onClick,
+    onChange,
+    onFocus,
+    onMouseUp,
+    onMouseDown,
+    onMouseMove,
   };
 
   const utilizedKeys: string[] = [];
@@ -99,6 +111,16 @@ function useStyleDirectives<T>(
     return s;
   })();
 
+  const events = {
+    onBlur,
+    onClick,
+    onChange,
+    onFocus,
+    onMouseUp,
+    onMouseDown,
+    onMouseMove,
+  }
+
   const { dataProps, ...attr } = (directives as StyleAttributes);
   const result = {
     root: {
@@ -114,6 +136,7 @@ function useStyleDirectives<T>(
     props: { ...(props as T), ...ignoredProps },
     attr,
     data: dataProps,
+    events,
   };
 
   return result;

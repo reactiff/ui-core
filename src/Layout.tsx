@@ -7,9 +7,9 @@ type DivProps = { children?: ReactNode, id?: string };
 
 export const div = (directives: DivProps & PropsDirectives) => {
   const { children, ...other }      = directives;
-  const { root, props, attr, data } = useStyleDirectives<DivProps>(other, null);
+  const { root, data, events } = useStyleDirectives<DivProps>(other, null);
   return (
-    <div {...data} {...props} {...attr} className={root.className}>
+    <div {...data} className={root.className} {...events}>
       {children}
     </div>
   );
@@ -18,14 +18,14 @@ export const div = (directives: DivProps & PropsDirectives) => {
 type RowProps = { children?: ReactNode, id?: string };
 export const row = (directives: RowProps & PropsDirectives) => {
   const { children, ...other } = directives;
-  const { root, props, attr, data  } = useStyleDirectives<RowProps>(
+  const { root, data, events  } = useStyleDirectives<RowProps>(
     other,
     null,
     'Row',
     'flex row',
   );
   return (
-    <div {...data} {...props} {...attr} className={root.className}>
+    <div {...data} className={root.className} {...events}>
       {children}
     </div>
   );
@@ -34,14 +34,14 @@ export const row = (directives: RowProps & PropsDirectives) => {
 type ColProps = { children?: ReactNode, id?: string };
 export const col = (directives: ColProps & PropsDirectives) => {
   const { children, ...other } = directives;
-  const { root, props, attr, data  } = useStyleDirectives<ColProps>(
+  const { root, data, events  } = useStyleDirectives<ColProps>(
     other,
     null,
     'Col',
     'flex column',
   );
   return (
-    <div {...data} {...props} {...attr} className={root.className}>
+    <div {...data} className={root.className} {...events}>
       {children}
     </div>
   );

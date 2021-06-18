@@ -9,12 +9,12 @@ export class TextProps {
 
 const Text = (directives: TextProps & PropsDirectives) => {
     const { size, children, ...other }                = directives;
-    const { root, props, attr, data } = useStyleDirectives<TextProps>(other, null);
+    const { root, data, events } = useStyleDirectives<TextProps>(other, null);
     if (!root.className) {
         return fnOrValue(directives.children);
     }
     return (
-        <div {...data} {...props} {...attr} className={root.className}>
+        <div {...data} className={root.className} {...events}>
             {fnOrValue(directives.children)}
         </div>
     )

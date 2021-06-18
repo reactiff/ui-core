@@ -28,7 +28,7 @@ export default (props: PropsType) => {
   };
 
   return (
-    <>
+    <React.Fragment>
       {
         props.button && !drawerOpen &&
         React.cloneElement(props.button, {
@@ -46,6 +46,6 @@ export default (props: PropsType) => {
           props.children
         }
       </Drawer>
-    </>
+    </React.Fragment>
   );
 };

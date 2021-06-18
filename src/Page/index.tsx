@@ -23,7 +23,7 @@ const _ownProps = new PageProps();
 
 export const Layout = (directives: PageProps & PropsDirectives) => {
     const { ...other }                = directives;
-    const { root, props, attr, data } = useStyleDirectives<PageProps>(other, _ownProps);
+    const { root, props, data } = useStyleDirectives<PageProps>(other, _ownProps);
 
     const style = useInlineStyle({
         root: {
