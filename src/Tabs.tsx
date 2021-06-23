@@ -133,7 +133,7 @@ export default (directives: UiTabs & PropsDirectives) => {
         value={key}
         id={props.id || 'global'}
       >
-        {elementForItem(item, isActiveTab)}
+        { elementForItem(item, isActiveTab) }
       </TabPanel>
     );
   });
