@@ -1,11 +1,11 @@
-export default class Throttle {
+class Throttle {
     
     nextCallback?: Function;
     lastKnownParams?: any[];
 
     ticking = false;
 
-    invokeWithAnimationFrame(callback, ...params: any[]) {
+    invokeWithAnimationFrame(callback: Function, ...params: any[]) {
         
         this.nextCallback = callback;
         this.lastKnownParams = params;
@@ -14,20 +14,20 @@ export default class Throttle {
 
             const _this = this;
 
-            const dispatch = (callback, params) => {
+            const dispatch = (callback: Function, ...params: any[]) => {
                 _this.ticking = true;
                 _this.nextCallback = undefined;
                 _this.lastKnownParams = undefined;
                 window.requestAnimationFrame(() => {
-                    callback(params);
+                    callback(...params);
                     _this.ticking = false;
                     if (_this.nextCallback) {
-                        dispatch(this.nextCallback, this.lastKnownParams);            
+                        dispatch(_this.nextCallback, ..._this.lastKnownParams!);            
                     }
                 });
             }
 
-            dispatch(this.nextCallback, this.lastKnownParams);
+            dispatch(this.nextCallback, ...this.lastKnownParams);
 
         }
     }
