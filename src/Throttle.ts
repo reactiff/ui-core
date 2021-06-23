@@ -1,4 +1,4 @@
-class Throttle {
+export default class Throttle {
     
     nextCallback?: Function;
     lastKnownParams?: any[];
