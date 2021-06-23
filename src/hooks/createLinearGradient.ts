@@ -1,8 +1,3 @@
-import React from 'react';
-import { isNumber } from 'lodash';
-import clsx from 'clsx';
-import ui from '..';
-
 export type ColorPortion = { color: string, percentage?: number };
 export type ColorNameOrPortion = string|ColorPortion;
 
@@ -11,16 +6,6 @@ export type LinearGradientSpecification = {
     angle?: number,
     colors?: ColorNameOrPortion[],
 };
-
-export function useLinearGradient(options: LinearGradientSpecification|LinearGradientSpecification[], dependencies: any[]) {
-    const style = React.useMemo(() => generateLinearGradientStyle(options), dependencies);
-    return style;
-}
-
-export function createLinearGradient(options: LinearGradientSpecification|LinearGradientSpecification[]) {
-    return generateLinearGradientStyle(options);
-}
-
 
 function parseColor(color: ColorNameOrPortion) {
     function colorFromString(color: string) {
@@ -45,4 +30,8 @@ function generateLinearGradientStyle(options: LinearGradientSpecification|Linear
     })
 
     return { backgroundImage: functions.join(', ') };
+}
+
+export function createLinearGradient(options: LinearGradientSpecification|LinearGradientSpecification[]) {
+    return generateLinearGradientStyle(options);
 }

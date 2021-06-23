@@ -10,27 +10,9 @@ export type StripeOptionsType = {
     angle?: number,
     size?: any,
     colors?: ColorNameOrPortion[],
-    segments?: string[],
 };
 
-const defaultProps = {
-    angle: 90,
-};
-
-// export function useStripes(options: StripeOptionsType, dependencies: any[]) {
-
-//     ui.trace.styles && console.log("@ %cuseStripes", 'color: #00cc00');
-    
-//     const params = { ...defaultProps, ...options };
-//     const style = React.useMemo(() => generateStripesStyle(params), dependencies);
-//     return style;
-// }
-
-export function createStripes(options: StripeOptionsType) {
-    const params = { ...defaultProps, ...options };
-    return generateStripesStyle(params);
-}
-
+const defaultProps = { angle: 90 };
 function colorFromString(color: string) {
     const tokens = color.split(' ');
     if (tokens.length === 1) return { color: tokens[0], parts: 1 };
@@ -41,10 +23,9 @@ function parseColor(color: ColorNameOrPortion) {
     if (typeof color === 'string') return colorFromString(color);
     return color as ParsedColor;
 }
-
 function generateStripesStyle(params: any) {
     const type = 'linear-gradient';
-    const { angle, segments } = params;
+    const { angle } = params;
     const colors = params.colors ? params.colors.map((c: ColorNameOrPortion) => parseColor(c)) : null;
     
     const partCount: number = colors.reduce((total: number, c: ParsedColor) => (+total) + c.parts, 0);
@@ -75,4 +56,9 @@ function generateStripesStyle(params: any) {
     };
 
     return styleProps;
+}
+
+export function createStripes(options: StripeOptionsType) {
+    const params = { ...defaultProps, ...options };
+    return generateStripesStyle(params);
 }

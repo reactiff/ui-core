@@ -1,26 +1,30 @@
-import { fnOrValue } from "../util/logic";
+import isNullOrUndefined from "../util/object/traverse/isNullOrUndefined";
 
-export const copyToClipboard = (inputOrText?: HTMLInputElement | HTMLElement | string | Function | null) => {
-    if (!inputOrText) return;
-    let input = fnOrValue(inputOrText);
-    if (typeof input === 'string') {
-        const value = input;
-        input = document.getElementById('copyToClipboardVirtualInput')
-        if (!input) {
-            // create virtual Input
-            input = document.createElement('input');
-            input.style = 'position: absolute; top: 0; left: 0; height: 1px; width: 1px; padding: 0; border: 0; opacity: 0;';
-            input.setAttribute("type", "text");
-            input.setAttribute("id", "copyToClipboardVirtualInput");
-            document.body.appendChild(input);
-        }
-        input.setAttribute("value", value);
-    }
-    input.select();
-    input.setSelectionRange(0, 99999); /* For mobile devices */
-    document.execCommand("copy");
+import copyToClipboard from "./copyToClipboard";
+
+function roundTo(value: number, decimalPlaces?: number) {
+    if (isNullOrUndefined(decimalPlaces)) return value;
+    const nn = Math.pow(10, decimalPlaces!);
+    return Math.round((value + Number.EPSILON) * nn) / nn;
+}
+
+function modulate(value: number, mod?: number) {
+    if (!mod) return value;
+    return value % mod;
+}
+
+function clamp(value: number, min?: number, max?: number) {
+    const minVal = isNullOrUndefined(min) ? Number.NEGATIVE_INFINITY : min!;
+    const maxVal = isNullOrUndefined(max) ? Number.POSITIVE_INFINITY : max!;
+    const mx = Math.max(minVal, value);
+    const mn = Math.min(maxVal, mx);
+    return mn;
 }
 
 export default {
     copyToClipboard,
+
+    roundTo,
+    modulate,
+    clamp,
 }
