@@ -57,6 +57,8 @@
     "spaced-comment": 0,
     "@typescript-eslint/no-unused-vars": 0,
 
-    "no-debugger": 1
+    "no-debugger": 1,
+
+    "standard/no-callback-literal": 0,
   }
 }

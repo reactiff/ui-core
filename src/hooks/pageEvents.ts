@@ -73,6 +73,21 @@ export const useWindowWidth = () => {                                           
     return state;
 } 
 
+export const useWindowSize = () => {                                                       // useWindowSize
+    const ref = useRef({ value: { width: 0, height: 0 }, ticking: false }).current;
+    const [state, setState] = useState(() => !isClient ? { width: 0, height: 0 } : { width: window.innerWidth, height: window.innerHeight }); 
+    useEffect(
+        () => windowEventHandler(
+            ref, 
+            setState, 
+            'resize', 
+            () => ({ width: window.innerWidth, height: window.innerHeight }),   // value getter
+            (a, b) => a.width === b.width && a.height === b.height              // comparer
+        )
+    , [ref]);
+    return state;
+} 
+
 const getScrollPosition = () => document.body.scrollTop || document.documentElement.scrollTop; 
 export const useScrollPosition = () => {
     const ref = useRef({ value: 0, ticking: false }).current;

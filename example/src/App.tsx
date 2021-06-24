@@ -12,6 +12,9 @@ const App = () => {
 
   const [state, setState] = useState<any>();
 
+  // hooks 
+  const winSize = ui.useWindowSize();
+
   useEffect(() => {
     const run = () => {
       const newState = { value: 0 };
@@ -20,6 +23,7 @@ const App = () => {
     }
     run();
   }, [setState]);
+  
 
   const cardStyle = {
     border: '4px solid #ffffff',
@@ -47,16 +51,20 @@ const App = () => {
 
       <ui.col alignCenter>
         
-        <ui.div css={{
-          color: 'yellowgreen',
-        }}>
+        <ui.div css={{color: 'yellowgreen'}}></ui.div>
 
-        </ui.div>
         <ui.div className={`flex column align-center`} css={cardStyle} >
           <ui.text className="value">
             Nothing
           </ui.text>
         </ui.div>
+
+        <ui.div className={`flex column align-center`} css={cardStyle} >
+          <ui.text className="value">
+            <span>Window: {winSize.width}x{winSize.height}</span>
+          </ui.text>
+        </ui.div>
+
         <p>
           <a href="https://www.npmjs.com/package/@reactiff/ui-core">npm</a> | <a href="https://github.com/reactiff/package-name">git</a> | MIT © <a href="https://github.com/reactiff">Rick Ellis</a>
         </p>
