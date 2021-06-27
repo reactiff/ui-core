@@ -8,7 +8,7 @@ const TableRow = (props: any) => {
     const isArray = Array.isArray(item);
 
     return (
-        <tr className="no-text-overflow">
+        <tr>
 
             {
                 isArray &&

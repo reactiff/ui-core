@@ -38,7 +38,7 @@ const Table = (directives: Props & PropsDirectives) => {
                 lineHeight: 1,
                 textAlign: 'center',
             },
-            '& td.number': {
+            '& .number': {
                 textAlign: 'right',
             },
         }

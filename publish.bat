@@ -2,10 +2,10 @@
 set /p msg="Enter git commit message: "
 @echo on
 
-cd example
-call yarn unlink "@reactiff/ui-core"
-cd..
-call yarn unlink
+@REM cd example
+@REM call yarn unlink "@reactiff/ui-core"
+@REM cd..
+@REM call yarn unlink
 
 git add .
 git commit -m "%msg%"
