@@ -1,7 +1,7 @@
 {
   "name": "@reactiff/ui-core",
   "homepage": "https://reactiff.github.io/ui-core",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "UI toolkit foundation",
   "author": "Rick Ellis",
   "license": "MIT",
@@ -15,13 +15,11 @@
   "scripts": {
     "build": "microbundle-crl --no-compress --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    
     "clean": "run-s -c clean:root clean:example",
     "clean:root": "rd /s /q \"dist\"",
     "clean:example": "rd /s /q \"example/build\"",
     "relink": "\"link-and-install.bat\"",
     "rebuild": "run-s -c clean relink",
-    
     "prepare": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
@@ -30,7 +28,6 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-
     "prepublish": "run-s clean:root build test:unit test:lint"
   },
   "peerDependencies": {
