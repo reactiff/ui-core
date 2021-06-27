@@ -5,9 +5,7 @@ import Panel from './Panel';
 // import './page.css'
 import * as divRowCol from '../Layout';
 import * as hooks from '../hooks';
-import { fnOrValue } from '../util/logic';
-
-
+import { fnOrValue } from '../util/lang';
 
 const ui = {
     ...divRowCol,

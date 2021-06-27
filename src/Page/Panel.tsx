@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { PropsDirectives, useStyleDirectives } from '../directives';
 import * as ui from '../Layout';
-import { fnOrValue } from '../util/logic';
+import { fnOrValue } from '../util/lang';
 
 export class PanelProps { 
     sticky?:    boolean = false;

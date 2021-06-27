@@ -1,6 +1,6 @@
 import React from 'react';
 
-import inline from './logic';
+import { inline } from './lang';
 
 const ComponentOne = () => <h1>Case One</h1>;
 const ComponentTwo = () => <h1>Case Two</h1>;

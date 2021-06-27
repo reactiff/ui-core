@@ -1,6 +1,4 @@
-import ui from '..';
-
-const range = ui.logic.range;
+import { range } from '../util/lang';
 
 describe('logic.range', () => {
     it('is truthy', () => {

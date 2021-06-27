@@ -1,5 +1,5 @@
 import parseDirectives from './parseDirectives';
-import arr from '../util/array';
+import { sortBy } from '../util/array';
 
 // const sortBy = (value: { (item: any): boolean } ) => (a: any, b: any) => value(a) < value(b) ? -1 : 1;
 
@@ -9,12 +9,12 @@ export function getPropsDescriptor(props: any) {
           
     const classes = items
         .filter(x => x.isSwitch)
-        .sort(arr.sortBy(x => x.key))
+        .sort(sortBy(x => x.key))
         .map(x => x.key);
 
     const attributes = items
         .filter(x => x.isAttribute && x.key!=='children')
-        .sort(arr.sortBy(x => x.key))
+        .sort(sortBy(x => x.key))
         .map(x => x.key + '=' + x.valueDescription);
     
     const children = items

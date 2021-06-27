@@ -1,4 +1,4 @@
-import { fnOrValue } from "../util/logic";
+import { fnOrValue } from "../util/lang";
 
 export const copyToClipboard = (inputOrText?: HTMLInputElement | HTMLElement | string | Function | null) => {
     if (!inputOrText) return;

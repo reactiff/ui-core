@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import util from '../util';
+import { fnOrValue } from '../util/lang';
 
 const useInlineStyle = (style: any, dependencies: any) => {
   const cb = useMemo(() => (
     makeStyles(() => (
-      createStyles({ ...util.logic.fnOrValue(style) })
+      createStyles({ ...fnOrValue(style) })
     ))
   ), [style, dependencies]);
   return cb;

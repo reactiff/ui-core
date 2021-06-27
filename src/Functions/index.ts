@@ -1,5 +1,4 @@
-import isNullOrUndefined from "../util/object/traverse/isNullOrUndefined";
-
+import { isNullOrUndefined } from "../validation";
 import copyToClipboard from "./copyToClipboard";
 
 function roundTo(value: number, decimalPlaces?: number) {

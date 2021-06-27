@@ -1,7 +1,6 @@
 import React from 'react';
 import { div as Div, row as Row } from './Layout';
-import isNullOrUndefined from './util/object/traverse/isNullOrUndefined';
-import str from './util/string';
+import { camelToSentenceCase } from './util/string';
 
 type PropertyPageProps = {
   data: any,
@@ -17,7 +16,7 @@ const PropertyPage = (props: PropertyPageProps) => {
       {
         keys.map(key => {
 
-          const label = str.camelToSentenceCase(key);
+          const label = camelToSentenceCase(key);
 
           return (
             <Row key={key} spaced fontSize="0.8rem">

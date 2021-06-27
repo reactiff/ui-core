@@ -9,7 +9,8 @@ import clsx from 'clsx';
 import { Paper } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 
-import logic from '../util/logic';
+import { inline } from '../util/lang';
+
 import {
   PropsDirectives,
   useStyleDirectives,
@@ -216,14 +217,14 @@ const Masonry = (directives: MasonryProps & PropsDirectives) => {
 
   setTimeout(() => handleResizeAllGridItems(), 0);
 
-  const inline = useInlineStyle(() => {
+  const style = useInlineStyle(() => {
     const minval = min || '150px';
     const maxval = max || '1.4fr';
     return {
       root: {
         gridTemplateColumns: `repeat(auto-fill, minmax(${minval},${maxval}))`,
         '& .masonry-item': {
-          boxShadow: logic.switch(
+          boxShadow: inline.switch(
             null, 'inherit', 
             () => theme.palette.type === 'light', '2px 2px 4px #9c9c9c',
           ),
@@ -231,7 +232,7 @@ const Masonry = (directives: MasonryProps & PropsDirectives) => {
           overflow: 'hidden',
         },
         '& .masonry-item:hover': {
-          boxShadow: logic.switch(
+          boxShadow: inline.switch(
             null, '3px 3px 6px #9c9c9c', 
             () => theme.palette.type === 'dark', '0px 0px 4px #55555522',
           ),
@@ -241,7 +242,7 @@ const Masonry = (directives: MasonryProps & PropsDirectives) => {
   }, [min, max])();
 
   return (
-    <div className={clsx('root', root.className, inline.root)}>
+    <div className={clsx('root', root.className, style.root)}>
       {
         /* eslint-disable react/jsx-props-no-spreading */
         /* eslint-disable no-confusing-arrow */

@@ -1,7 +1,5 @@
-import isNullOrUndefined from './isNullOrUndefined';
-
+import { isNullOrUndefined } from '../../../validation';
 import { RecursiveContext, CallbackContext } from './types';
-
 
 export function traverseObject(value: any, ctx: RecursiveContext) {
   if (ctx.debug)

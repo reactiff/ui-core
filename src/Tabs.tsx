@@ -10,7 +10,7 @@ import {
   useInlineStyle,
 } from './directives';
 import * as ui from './Layout';
-import util from './util';
+import { camelToSentenceCase } from './util/string';
 
 export type UiTabDef = {
   label: ReactNode;
@@ -116,7 +116,7 @@ export default (directives: UiTabs & PropsDirectives) => {
       aria-label={`tabs with ${keys.length} panels`}
     >
       {keys.map((key: string) => {
-        const label = util.string.camelToSentenceCase(key);
+        const label = camelToSentenceCase(key);
         return <Tab key={key} label={label} value={key} />;
       })}
     </Tabs>

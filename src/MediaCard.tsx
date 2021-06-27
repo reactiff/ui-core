@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import util from './util';
+import { camelToSentenceCase } from './util/string';
 
 const useStyles = makeStyles({
   root: {
@@ -71,7 +71,7 @@ export default function MediaCard(props: MediaCardProps) {
               color="primary"
               onClick={() => footerActions![key]()}
             >
-              {util.string.camelToSentenceCase(key)}
+              {camelToSentenceCase(key)}
             </Button>
           ))}
         </CardActions>

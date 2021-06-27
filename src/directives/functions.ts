@@ -1,7 +1,7 @@
 import attributeMap from './attributeMap';
 import resolveAttributeValue from './resolveAttributeValue';
 import classMap from './classMap';
-import str from '../util/string';
+import { camelToKebabCase } from '../util/string';
 
 export type StyleBag = { style: any; classes: string[] };
 export type BagKeyValue = {
@@ -26,7 +26,7 @@ export function createStyle(x: BagKeyValue) {
 export function createClass(x: BagKeyValue) {
   const resolvedClass = Reflect.has(classMap, x.key)
     ? (classMap as any)[x.key]
-    : str.camelToKebabCase(x.key);
+    : camelToKebabCase(x.key);
   x.bag.classes.push(resolvedClass);
   return true;
 }

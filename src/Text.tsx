@@ -1,6 +1,6 @@
 import React from 'react';
 import { PropsDirectives, useStyleDirectives } from './directives';
-import { fnOrValue } from './util/logic';
+import { fnOrValue } from './util/lang';
 
 export class TextProps { 
     size?:     number|string;
