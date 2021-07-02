@@ -59,6 +59,7 @@
 
     "no-debugger": 1,
 
-    "standard/no-callback-literal": 0,
+    "standard/no-callback-literal": 0
+    
   }
 }

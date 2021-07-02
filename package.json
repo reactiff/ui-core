@@ -1,7 +1,7 @@
 {
   "name": "@reactiff/ui-core",
   "homepage": "https://reactiff.github.io/ui-core",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "UI toolkit foundation",
   "author": "Rick Ellis",
   "license": "MIT",
@@ -28,17 +28,15 @@
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
     "deploy": "gh-pages -d example/build",
-    "prepublish": "run-s clean:root build test:unit test:lint"
+    "clean-build-test": "run-s clean:root build test:unit test:lint"
   },
   "peerDependencies": {
     "@material-ui/core": "^4.11.4",
     "clsx": "^1.1.1",
+    "csstype": "^3.0.8",
     "lodash": "^4.17.21",
     "lorem-ipsum": "^2.0.3",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "uuid": "^8.3.2",
-    "csstype": "^3.0.8"
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@material-ui/core": "^4.11.4",
@@ -72,13 +70,15 @@
     "microbundle-crl": "^0.13.10",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "react-scripts": "^3.4.1",
     "typescript": "^3.7.5",
     "uuid": "^8.3.2"
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
 }
