@@ -12,7 +12,7 @@ yarn add @reactiff/ui-core
 ## Usage
 
 ```tsx
-import ui from '@reactiff/ui-core'
+import * as ui from '@reactiff/ui-core'
 
 return <ui.div>HELLO</ui.div>;
 

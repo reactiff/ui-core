@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactMarkdown from 'react-markdown'
-import ui, { useWindowSize } from '@reactiff/ui-core'
+import * as ui from '@reactiff/ui-core'
 import * as demos from './demos';
 
 import './css/index.css'
@@ -13,7 +13,7 @@ const App = () => {
   
   
   // hooks 
-  const winSize = useWindowSize();
+  const winSize = ui.useWindowSize();
 
   const cardStyle = {
     border: '4px solid #ffffff',

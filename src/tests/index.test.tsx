@@ -1,4 +1,4 @@
-import ui from '..'
+import * as ui from '..'
 
 describe('UI toolkit', () => {
   it('is truthy', () => {

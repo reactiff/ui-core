@@ -1,8 +1,8 @@
 {
   "name": "@reactiff/ui-core",
   "homepage": "https://reactiff.github.io/ui-core",
-  "version": "4.0.1",
-  "description": "UI toolkit foundation",
+  "version": "5.0.1",
+  "description": "React UI toolkit with @MUI",
   "author": "Rick Ellis",
   "license": "MIT",
   "repository": "reactiff/ui-core",
@@ -31,7 +31,6 @@
     "clean-build-test": "run-s clean:root build test:unit test:lint"
   },
   "peerDependencies": {
-    "@material-ui/core": "^4.11.4",
     "clsx": "^1.1.1",
     "csstype": "^3.0.8",
     "lodash": "^4.17.21",
@@ -39,7 +38,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@material-ui/core": "^4.11.4",
     "@testing-library/dom": "^7.31.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -78,6 +76,8 @@
     "dist"
   ],
   "dependencies": {
+    "@mui/material": "^5.0.6",
+    "@mui/styles": "^5.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

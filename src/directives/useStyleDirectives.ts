@@ -1,6 +1,6 @@
 // import React from 'react';
 import clsx from 'clsx';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@mui/styles';
 import { StyleBag, createClass } from './functions';
 import classSwitches from './classSwitches';
 import styleAttributes, { StyleAttributes } from './styleAttributes';

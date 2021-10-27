@@ -1,5 +1,5 @@
 import React, { ReactNode, ReactElement } from 'react';
-import Drawer from '@material-ui/core/Drawer';
+import Drawer from '@mui/material/Drawer';
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 type PropsType = {

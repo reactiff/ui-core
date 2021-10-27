@@ -6,8 +6,7 @@ import React, {
   useMemo 
 } from 'react';
 import clsx from 'clsx';
-import { Paper } from '@material-ui/core';
-import { useTheme } from '@material-ui/core/styles';
+import { Paper, useTheme } from '@mui/material';
 
 import { inline } from '../util/lang';
 
@@ -100,7 +99,7 @@ const Masonry = (directives: MasonryProps & PropsDirectives) => {
     min, max, items, elementForItem, revision, ...d
   } = directives;
 
-  const theme = useTheme();
+  // const theme = useTheme();
 
   const { root } = useStyleDirectives<MasonryProps>(
     d,
@@ -223,20 +222,20 @@ const Masonry = (directives: MasonryProps & PropsDirectives) => {
     return {
       root: {
         gridTemplateColumns: `repeat(auto-fill, minmax(${minval},${maxval}))`,
-        '& .masonry-item': {
-          boxShadow: inline.switch(
-            null, 'inherit', 
-            () => theme.palette.type === 'light', '2px 2px 4px #9c9c9c',
-          ),
-          borderRadius: 3,
-          overflow: 'hidden',
-        },
-        '& .masonry-item:hover': {
-          boxShadow: inline.switch(
-            null, '3px 3px 6px #9c9c9c', 
-            () => theme.palette.type === 'dark', '0px 0px 4px #55555522',
-          ),
-        },
+        // '& .masonry-item': {
+        //   boxShadow: inline.switch(
+        //     null, 'inherit', 
+        //     () => theme.palette.type === 'light', '2px 2px 4px #9c9c9c',
+        //   ),
+        //   borderRadius: 3,
+        //   overflow: 'hidden',
+        // },
+        // '& .masonry-item:hover': {
+        //   boxShadow: inline.switch(
+        //     null, '3px 3px 6px #9c9c9c', 
+        //     () => theme.palette.type === 'dark', '0px 0px 4px #55555522',
+        //   ),
+        // },
       },
     };
   }, [min, max])();

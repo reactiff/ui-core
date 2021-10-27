@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@mui/styles';
 import { fnOrValue } from '../util/lang';
 
 const useInlineStyle = (style: any, dependencies: any) => {

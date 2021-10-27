@@ -1,5 +1,4 @@
 import { isNumber } from 'lodash';
-import ui from '..';
 
 export type ColorPortion = { color: string, parts?: number };
 export type ColorNameOrPortion = string|ColorPortion;
