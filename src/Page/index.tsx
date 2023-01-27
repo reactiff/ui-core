@@ -27,14 +27,11 @@ export const Layout = (directives: PageProps & PropsDirectives) => {
         root: {
             minHeight: '100vh;',
             // border="thin dotted red",
-
             '& > .column': {
                 // border="thin dotted red",
-
                 '& > .row': {
                     // border="thin dotted red",
                     height: '100vh;',
-
                     '& > .page-panel': {
                         backgroundColor: '#80808011',
                     },
